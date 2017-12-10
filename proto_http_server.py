@@ -1,1 +1,1 @@
-minimal_cgi_python/proto_http_server.py
+planetoplot/html/minimal_cgi_python/proto_http_server.py
