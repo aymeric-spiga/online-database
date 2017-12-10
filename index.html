@@ -9,17 +9,48 @@
 <body>
 
 <form name="onlinerequest" action="./cgi-bin/maincgi.py" method="get" target="_blank">
-<input type="text" size="7" name="x" value="">
-<input type="text" size="7" name="y" value="">
-<input type="text" size="7" name="z" value="0.">
-<input type="text" size="7" name="t" value="0.">
-<input type="submit" value="SUBMIT" />
-</form>
+<ul>
 
+<li>Longitude<input type="text" size="7" name="x" value="">
 
+<li>Latitude<input type="text" size="7" name="y" value="">
+
+<li>Altitude<input type="text" size="7" name="z" value="0.">
+
+<li>Time<input type="text" size="7" name="t" value="0.">
+
+<hr></hr>
+
+<li>Variable
+<input type="text" size="7" name="var" value="HGT">
+<input type="checkbox" name="vargoal" value="main" checked /> main
+
+<li>Variable 2<input type="text" size="7" name="var" value="">
+<input type="checkbox" name="vargoal" value="main" /> main
+<input type="checkbox" name="vargoal" value="vector" /> vector
+<input type="checkbox" name="vargoal" value="contour" /> contour
+
+<li>Variable 3<input type="text" size="7" name="var" value="">
+<input type="checkbox" name="vargoal" value="main" /> main
+<input type="checkbox" name="vargoal" value="vector" /> vector
+
+<li>Variable 4<input type="text" size="7" name="var" value="">
+<input type="checkbox" name="vargoal" value="main" /> main
+<input type="checkbox" name="vargoal" value="vector" /> vector
+
+<p><input type="submit" value="SUBMIT" /></p>
+
+<hr></hr>
+
+<li>x-value min<input type="text" size="7" name="xmin" value="">
+<li>x-value max<input type="text" size="7" name="xmax" value="">
+<li>y-value min<input type="text" size="7" name="ymin" value="">
+<li>y-value max<input type="text" size="7" name="ymax" value="">
+<li>[2D] Colorbar<input type="text" size="7" name="colorbar" value="">
+<li>[2D] Value min<input type="text" size="7" name="vmin" value="">
+<li>[2D] Value max<input type="text" size="7" name="vmax" value="">
 
 
 </body>
 
 </html>
-

@@ -2,10 +2,20 @@
 # -*- coding: UTF-8 -*-
 
 import cgi, cgitb 
+import numpy as np
 
 import sys
 sys.path.insert(0, "./planetoplot/modules")
-from ppclass import pp
+from ppclass import pp,inspect
+
+##################################
+def getform(source,isfloat=False):
+  output = form.getvalue(source)
+  if isfloat:
+    if output is not None:
+      output = np.float(output)
+  return output
+##################################
 
 # for debugging in web browser
 cgitb.enable()
@@ -16,16 +26,29 @@ form = cgi.FieldStorage()
 # RETRIEVE and PLOT DATA with PPCLASS
 fifi = "./data/wrfout_d01_2024-10-04_06z00z00_zabg"
 req = pp()
+##
 req.file = fifi
-req.var = "HGT"
-req.x = form.getvalue("x")
-req.y = form.getvalue("y")
-req.z = form.getvalue("z")
-req.t = form.getvalue("t")
+req.var = form.getvalue("var")
+req.vargoal = form.getvalue("vargoal")
+##
+req.x = getform("x")
+req.y = getform("y")
+req.z = getform("z")
+req.t = getform("t")
+##
+req.xmin = getform("xmin",isfloat=True)
+req.xmax = getform("xmax",isfloat=True)
+req.ymin = getform("ymin",isfloat=True)
+req.ymax = getform("ymax",isfloat=True)
+##
+req.colorbar = getform("colorbar")
+req.vmin = getform("vmin",isfloat=True)
+req.vmax = getform("vmax",isfloat=True)
+
+# SET OUTPUT and RUN !
 req.out = "agg" 
 req.filename = "webapp"
 req.getplot()
-
 
 ##### NOW WRITE THE HTML PAGE TO USER
 print "Content-type:text/html;charset=utf-8\n"
@@ -34,6 +57,7 @@ header="""<html><head><title>Mars Climate Database: The Web Interface</title></h
 print header
 print "THIS IS A TEST!"
 print "<img src='../webapp.png'><br />"
+print inspect(fifi)
 bottom = "</body></html>"
 print bottom
 
