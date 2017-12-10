@@ -1,0 +1,4 @@
+[submodule "planetoplot"]
+	path = planetoplot
+	url = git@github.com:aymeric-spiga/planetoplot.git
+	branch = standalone
