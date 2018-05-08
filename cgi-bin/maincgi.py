@@ -44,6 +44,9 @@ req.ymax = getform("ymax",isfloat=True)
 req.colorbar = getform("colorbar")
 req.vmin = getform("vmin",isfloat=True)
 req.vmax = getform("vmax",isfloat=True)
+##
+req.back = getform("back") # marche pas
+req.proj = getform("proj")
 
 # SET OUTPUT and RUN !
 req.out = "agg" 
