@@ -11,30 +11,64 @@
 <form name="onlinerequest" action="./cgi-bin/maincgi.py" method="get" target="_blank">
 <ul>
 
+<!--
 <li>Longitude<input type="text" size="7" name="x" value="">
-
 <li>Latitude<input type="text" size="7" name="y" value="">
-
 <li>Altitude<input type="text" size="7" name="z" value="0.">
-
 <li>Time<input type="text" size="7" name="t" value="0.">
+-->
 
 <hr></hr>
 
-<li>Variable
-<input type="text" size="7" name="var" value="HGT">
+<li> Longitude (°E) <select name="x">
+<option value="">free</option>
+<script src="list_lon.js"></script>
+</select><br />
+
+<li> Latitude (°N) <select name="y">
+<option value="">free</option>
+<script src="list_lat.js"></script>
+</select><br />
+
+<li> Pressure level (Pa) <select name="z">
+<option value="">free</option>
+<script src="list_presnivs.js"></script>
+</select><br />
+
+<li> Time <select name="t">
+<option value="">free</option>
+<script src="list_time_counter.js"></script>
+</select><br />
+
+<hr></hr>
+
+<li>Variable 1
+<select name="var"><script src="list_var.js"></script></select>
+<!-- <input type="text" size="7" name="var" value="HGT"> -->
 <input type="checkbox" name="vargoal" value="main" checked /> main
 
-<li>Variable 2<input type="text" size="7" name="var" value="">
+<li>Variable 2
+<select name="var">
+<option value=""></option>
+<script src="list_var.js"></script></select>
+<!-- <input type="text" size="7" name="var" value=""> -->
 <input type="checkbox" name="vargoal" value="main" /> main
 <input type="checkbox" name="vargoal" value="vector" /> vector
 <input type="checkbox" name="vargoal" value="contour" /> contour
 
-<li>Variable 3<input type="text" size="7" name="var" value="">
+<li>Variable 3
+<select name="var">
+<option value=""></option>
+<script src="list_var.js"></script></select>
+<!-- <input type="text" size="7" name="var" value=""> -->
 <input type="checkbox" name="vargoal" value="main" /> main
 <input type="checkbox" name="vargoal" value="vector" /> vector
 
-<li>Variable 4<input type="text" size="7" name="var" value="">
+<li>Variable 4
+<select name="var">
+<option value=""></option>
+<script src="list_var.js"></script></select>
+<!-- <input type="text" size="7" name="var" value=""> -->
 <input type="checkbox" name="vargoal" value="main" /> main
 <input type="checkbox" name="vargoal" value="vector" /> vector
 
