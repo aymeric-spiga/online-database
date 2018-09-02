@@ -3,12 +3,21 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Yeah</title>
+<title>The Venus Climate Database</title>
 </head>
 
-<body>
+<body bgcolor="black">
+
+<table border="0" align="center" width="150%">
+<tr>
+<td valign="top">
+
+<h1><font color="green">The Venus Climate Database</font></h1>
+<font color="white">
 
 <form name="onlinerequest" action="./cgi-bin/maincgi.py" method="get" target="_blank">
+<p><input type="submit" value="SUBMIT" style="font-weight:bold;font-size:150%;color:green"/></p>
+
 <ul>
 
 <!--
@@ -72,8 +81,6 @@
 <input type="checkbox" name="vargoal" value="main" /> main
 <input type="checkbox" name="vargoal" value="vector" /> vector
 
-<p><input type="submit" value="SUBMIT" /></p>
-
 <hr></hr>
 
 <li> Log y-axis <input type="checkbox" name="logy" value="True" checked />
@@ -109,7 +116,18 @@ max<input type="text" size="7" name="vmax" value="">
 <!-- 
 <input type="text" size="7" name="proj" value="">
 <li>[2D] Background<input type="text" size="7" name="back" value="">
+-->
 
+</td>
+<td valign="top">
+ <img src="http://www.db-prods.net/blog/wp-content/uploads/2017/12/uvi_20160723_084730_365_l2b_v10_PRGB_composite.jpg"
+      border="0"  align="center"
+      width="33%" >
+</td>
+</tr>
+</table>
+
+</font>
 </body>
 
 </html>

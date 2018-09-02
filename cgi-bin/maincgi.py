@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+##############################
+##############################
+fifi = "./data/wrfout_d01_2024-10-04_06z00z00_zabg"
+fifi = "/home/aspiga/data/VENUS/Xave-24perVd_300_extract_last.nc"
+title = "LMD Venus Climate Database"
+##############################
+##############################
+
 import cgi, cgitb 
 import numpy as np
 
@@ -24,7 +32,6 @@ cgitb.enable()
 form = cgi.FieldStorage() 
 
 # RETRIEVE and PLOT DATA with PPCLASS
-fifi = "./data/wrfout_d01_2024-10-04_06z00z00_zabg"
 req = pp()
 ##
 req.file = fifi
@@ -50,19 +57,29 @@ req.vmax = getform("vmax",isfloat=True)
 req.back = getform("back") # marche pas
 req.proj = getform("proj")
 
-# SET OUTPUT and RUN !
+# SET OUTPUT
+req.xp = 10
+req.yp = 10
+req.svx = 3
+req.svy = 3
+req.title = title
 req.out = "agg" 
-req.filename = "webapp"
-req.getplot()
+req.nopickle = True
+#req.quiet = False ; req.verbose = True # debug
+req.quiet = True ; req.verbose = False # production
 
 ##### NOW WRITE THE HTML PAGE TO USER
 print "Content-type:text/html;charset=utf-8\n"
 print     #Apache needs a space after content-type
-header="""<html><head><title>Mars Climate Database: The Web Interface</title></head><body>"""
+header="""<html><head><title>LMD Venus Climate Database</title></head><body>"""
 print header
 print "THIS IS A TEST!"
-print "<img src='../webapp.png'><br />"
-print inspect(fifi)
+print req.x,req.y,req.z,req.t
+
+##### RUN PLANETOPLOT
+req.getplot()
+
+##### NOW WRITE THE HTML PAGE TO USER -- FIGURE and BOTTOM
+print "<img src='../"+req.filename+".png'><br />"
 bottom = "</body></html>"
 print bottom
-
