@@ -41,6 +41,8 @@ req.xmax = getform("xmax",isfloat=True)
 req.ymin = getform("ymin",isfloat=True)
 req.ymax = getform("ymax",isfloat=True)
 ##
+if form.getvalue("logy") == "True": req.logy = True
+##
 req.colorbar = getform("colorbar")
 req.vmin = getform("vmin",isfloat=True)
 req.vmax = getform("vmax",isfloat=True)

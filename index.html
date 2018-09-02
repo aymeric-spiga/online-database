@@ -76,17 +76,38 @@
 
 <hr></hr>
 
-<li>x-value min<input type="text" size="7" name="xmin" value="">
-<li>x-value max<input type="text" size="7" name="xmax" value="">
-<li>y-value min<input type="text" size="7" name="ymin" value="">
-<li>y-value max<input type="text" size="7" name="ymax" value="">
-<li>[2D] Colorbar<input type="text" size="7" name="colorbar" value="">
-<li>[2D] Value min<input type="text" size="7" name="vmin" value="">
-<li>[2D] Value max<input type="text" size="7" name="vmax" value="">
+<li> Log y-axis <input type="checkbox" name="logy" value="True" checked />
+<li> x-value 
+min<input type="text" size="7" name="xmin" value="">
+max<input type="text" size="7" name="xmax" value="">
+<li>y-value 
+min<input type="text" size="7" name="ymin" value="">
+max<input type="text" size="7" name="ymax" value="">
 
 <hr></hr>
 
-<li>[2D] Projection<input type="text" size="7" name="proj" value="">
+<li>[2D] Colorbar
+<!-- <input type="text" size="7" name="colorbar" value="viridis"> -->
+<select name="colorbar">
+<option value="viridis">viridis</option>
+<option value="seismic">seismic</option>
+</select>
+<li>[2D] Projection
+<select name="proj">
+<option value=""></option>
+<option value="cyl">cyl</option>
+<option value="ortho">ortho</option>
+<option value="moll">moll</option>
+<option value="npstere">npstere</option>
+<option value="spstere">spstere</option>
+</select>
+<li>[2D] Value 
+min<input type="text" size="7" name="vmin" value="">
+max<input type="text" size="7" name="vmax" value="">
+</select>
+
+<!-- 
+<input type="text" size="7" name="proj" value="">
 <li>[2D] Background<input type="text" size="7" name="back" value="">
 
 </body>
