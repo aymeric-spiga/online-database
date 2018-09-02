@@ -16,6 +16,9 @@ import sys
 sys.path.insert(0, "./planetoplot/modules")
 from ppclass import pp,inspect
 
+import datetime
+import hashlib
+
 ##################################
 def getform(source,isfloat=False):
   output = form.getvalue(source)
@@ -68,7 +71,10 @@ req.nopickle = True
 #req.quiet = False ; req.verbose = True # debug
 req.quiet = True ; req.verbose = False # production
 
-##### NOW WRITE THE HTML PAGE TO USER
+# INFER A NAME from CURRENT DATE
+req.filename = hashlib.md5(str(datetime.datetime.today())).hexdigest()
+
+##### NOW WRITE THE HTML PAGE TO USER -- HEADER
 print "Content-type:text/html;charset=utf-8\n"
 print     #Apache needs a space after content-type
 header="""<html><head><title>LMD Venus Climate Database</title></head><body>"""
